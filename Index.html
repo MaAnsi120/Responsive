@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout</title>
+    <title>Responsive Layout with Login & Signup</title>
     <style>
         /* Basic Reset */
         * {
@@ -34,7 +34,8 @@
                 "feature1"
                 "feature2"
                 "feature3"
-                "signup";
+                "signup"
+                "login";
             grid-gap: 20px;
             padding: 20px;
         }
@@ -60,6 +61,13 @@
             grid-area: signup;
         }
 
+        .login {
+            background-color: #D0021B;
+            padding: 20px;
+            color: #fff;
+            grid-area: login;
+        }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -74,7 +82,8 @@
                     "header header"
                     "content content"
                     "feature1 feature2"
-                    "signup feature3";
+                    "signup login"
+                    "feature3 feature3";
             }
         }
 
@@ -84,7 +93,7 @@
                 grid-template-areas: 
                     "header header header"
                     "feature1 feature2 feature3"
-                    "signup signup signup"
+                    "signup signup login"
                     "content content content";
             }
         }
@@ -93,7 +102,7 @@
 <body>
 
     <header>
-        <h1>Responsive Layout Example</h1>
+        <h1>Responsive Layout with Login & Signup</h1>
     </header>
 
     <div class="container">
@@ -120,6 +129,13 @@
         <section class="signup">
             <h2>Sign Up</h2>
             <p>Sign up for our services.</p>
+            <button>Sign Up</button>
+        </section>
+
+        <section class="login">
+            <h2>Login</h2>
+            <p>Already have an account? Log in here.</p>
+            <button>Login</button>
         </section>
     </div>
 
