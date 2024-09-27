@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Layout</title>
+    <title>Responsive Layout</title>
     <style>
         /* Basic Reset */
         * {
@@ -20,27 +20,44 @@
 
         /* Layout Styling */
         header {
-            background-color: #333;
+            background-color: #4A90E2;
             color: #fff;
             text-align: center;
             padding: 1rem;
         }
 
-        main {
+        .container {
             display: grid;
-            grid-template-columns: 1fr 250px;
-            gap: 20px;
+            grid-template-areas: 
+                "header"
+                "content"
+                "feature1"
+                "feature2"
+                "feature3"
+                "signup";
+            grid-gap: 20px;
             padding: 20px;
         }
 
         .content {
-            background-color: #f4f4f4;
+            background-color: #F5A623;
+            padding: 20px;
+            grid-area: content;
+        }
+
+        .feature1, .feature2, .feature3 {
+            background-color: #50E3C2;
             padding: 20px;
         }
 
-        .sidebar {
-            background-color: #ccc;
+        .feature1 { grid-area: feature1; }
+        .feature2 { grid-area: feature2; }
+        .feature3 { grid-area: feature3; }
+
+        .signup {
+            background-color: #9013FE;
             padding: 20px;
+            grid-area: signup;
         }
 
         footer {
@@ -50,16 +67,25 @@
             padding: 1rem;
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            main {
-                grid-template-columns: 1fr;
+        /* Tablet View */
+        @media screen and (min-width: 768px) {
+            .container {
+                grid-template-areas: 
+                    "header header"
+                    "content content"
+                    "feature1 feature2"
+                    "signup feature3";
             }
         }
 
-        @media screen and (max-width: 480px) {
-            header, footer {
-                padding: 0.5rem;
+        /* Desktop View */
+        @media screen and (min-width: 1024px) {
+            .container {
+                grid-template-areas: 
+                    "header header header"
+                    "feature1 feature2 feature3"
+                    "signup signup signup"
+                    "content content content";
             }
         }
     </style>
@@ -67,23 +93,38 @@
 <body>
 
     <header>
-        <h1>Welcome to Innomatics Research Labs</h1>
+        <h1>Responsive Layout Example</h1>
     </header>
 
-    <main>
+    <div class="container">
         <section class="content">
-            <h2>Main Content</h2>
-            <p>This section represents the main content of the layout.</p>
+            <h2>Content Section</h2>
+            <p>This is the main content area.</p>
         </section>
 
-        <aside class="sidebar">
-            <h2>Sidebar</h2>
-            <p>This is a sidebar with additional information.</p>
-        </aside>
-    </main>
+        <section class="feature1">
+            <h2>Feature 1</h2>
+            <p>Details about feature 1.</p>
+        </section>
+
+        <section class="feature2">
+            <h2>Feature 2</h2>
+            <p>Details about feature 2.</p>
+        </section>
+
+        <section class="feature3">
+            <h2>Feature 3</h2>
+            <p>Details about feature 3.</p>
+        </section>
+
+        <section class="signup">
+            <h2>Sign Up</h2>
+            <p>Sign up for our services.</p>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2024 Innomatics Research Labs</p>
+        <p>© 2024 Responsive Layout</p>
     </footer>
 
 </body>
